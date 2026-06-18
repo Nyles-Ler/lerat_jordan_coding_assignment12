@@ -1,6 +1,4 @@
-# ============================
 # Stage 1 - Build Storybook
-# ============================
 
 # Use Node.js image to build the application
 FROM node:20-alpine AS build
@@ -20,9 +18,7 @@ COPY . .
 # Generate a production Storybook build
 RUN npm run build-storybook
 
-# ============================
 # Stage 2 - Serve Production Build
-# ============================
 
 # Use a lightweight nginx image to host the static files
 FROM nginx:alpine

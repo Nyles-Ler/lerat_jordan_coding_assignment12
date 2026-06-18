@@ -1,0 +1,8 @@
+node_modules
+storybook-static
+build
+.git
+debug-storybook.log
+npm-debug.log
+Dockerfile
+.dockerignore

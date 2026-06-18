@@ -1,70 +1,241 @@
-# Getting Started with Create React App
+# Assignment 12 - React Component Library with Storybook
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Author
 
-## Available Scripts
+**Jordan Lerat**
+Red River College Polytechnic
+Full Stack Web Development Diploma
 
-In the project directory, you can run:
+---
 
-### `npm start`
+# Project Overview
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+This project is a responsive UI Component Library built using React, TypeScript, Storybook, Styled Components, Jest, React Testing Library, and Docker.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The purpose of this project is to create reusable UI components that can be tested, documented, and deployed using modern web development tools and practices.
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Components Included
 
-### `npm run build`
+The component library contains the following components:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* Button
+* Label
+* Text
+* Table
+* Table Header
+* Table Row
+* Table Cell
+* Table Footer
+* Dropdown
+* Radio Button
+* Img
+* Hero Image
+* Card
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Each component includes:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* Responsive styling
+* Default state
+* Disabled state
+* Storybook stories
+* Unit tests
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+# Technologies Used
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+* React
+* TypeScript
+* Storybook
+* Styled Components
+* Jest
+* React Testing Library
+* Docker
+* Nginx
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+# Prerequisites
 
-## Learn More
+Before running this project, install the following:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+* Docker Desktop
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Optional for local development:
 
-### Code Splitting
+* Node.js
+* npm
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
 
-### Analyzing the Bundle Size
+# Running the Application with Docker
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Step 1 - Build the Docker Image
 
-### Making a Progressive Web App
+Open a terminal in the project root directory and run:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```bash
+docker build -t lerat_jordan_coding_assignment12 .
+```
 
-### Advanced Configuration
+## Step 2 - Run the Docker Container
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Run the container using:
 
-### Deployment
+```bash
+docker run --name lerat_jordan_coding_assignment12 -p 8083:80 lerat_jordan_coding_assignment12
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Step 3 - Open the Application
 
-### `npm run build` fails to minify
+Open a web browser and navigate to:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```text
+http://localhost:8083
+```
+
+Storybook will load and display all available UI components.
+
+---
+
+# Running the Application Locally
+
+## Install Dependencies
+
+```bash
+npm install
+```
+
+## Start Storybook
+
+```bash
+npm run storybook
+```
+
+## Open Storybook
+
+Open:
+
+```text
+http://localhost:6006
+```
+
+---
+
+# Running Unit Tests
+
+Run all component tests:
+
+```bash
+npm test
+```
+
+When Jest starts, press:
+
+```text
+a
+```
+
+to run all tests.
+
+---
+
+# Building a Production Storybook
+
+Generate a production Storybook build:
+
+```bash
+npm run build-storybook
+```
+
+The production build will be generated in:
+
+```text
+storybook-static/
+```
+
+---
+
+# Docker Configuration Requirements
+
+This project satisfies the assignment requirements by:
+
+* Using a production Storybook build
+* Creating a working directory named:
+
+```text
+lerat_jordan_ui_garden
+```
+
+* Creating a container named:
+
+```text
+lerat_jordan_coding_assignment12
+```
+
+* Hosting the application on:
+
+```text
+http://localhost:8083
+```
+
+---
+
+# Dockerfile Summary
+
+The Dockerfile performs the following tasks:
+
+1. Uses a Node.js image to build the application.
+2. Creates the required working directory.
+3. Installs project dependencies.
+4. Generates a production Storybook build.
+5. Uses Nginx to host the static Storybook files.
+6. Exposes the application through localhost port 8083.
+
+---
+
+# Assignment Learning Outcomes
+
+This project demonstrates the ability to:
+
+* Create reusable React UI components.
+* Implement responsive component design.
+* Test components using Jest and React Testing Library.
+* Document components using Storybook.
+* Style components using Styled Components.
+* Create a production-ready Docker deployment.
+* Host a production build using Nginx.
+
+---
+
+# Repository Structure
+
+```text
+assignment-12-component-library/
+│
+├── .storybook/
+├── src/
+│   ├── components/
+│   │   ├── Button/
+│   │   ├── Label/
+│   │   ├── Text/
+│   │   ├── Dropdown/
+│   │   ├── RadioButton/
+│   │   ├── Img/
+│   │   ├── HeroImage/
+│   │   ├── Card/
+│   │   ├── Table/
+│   │   ├── TableHeader/
+│   │   ├── TableRow/
+│   │   ├── TableCell/
+│   │   └── TableFooter/
+│   │
+│   └── theme.ts
+│
+├── Dockerfile
+├── README.md
+├── package.json
+└── package-lock.json
+```

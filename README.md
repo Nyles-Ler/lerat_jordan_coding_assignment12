@@ -3,8 +3,11 @@
 ## Author
 
 **Jordan Lerat**
+
 Red River College Polytechnic
+
 Full Stack Web Development Diploma
+
 
 ---
 
